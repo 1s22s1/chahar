@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Chahar do
-  it 'has a version number' do
-    expect(Chahar::VERSION).not_to be nil
-  end
-
-  it 'does something useful' do
-    expect(false).to eq(true)
+  describe '#initialize' do
+    expect(described_class.new([1]).size).to eq 1
   end
 end

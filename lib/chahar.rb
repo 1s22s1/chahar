@@ -3,6 +3,7 @@
 require_relative 'chahar/version'
 
 module Chahar
-  class Error < StandardError; end
-  # Your code goes here...
+  def initialize(enum)
+    @hash = Hash.new(false)
+  end
 end
