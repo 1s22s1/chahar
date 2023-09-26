@@ -3,6 +3,12 @@
 require_relative 'chahar/version'
 
 class Chahar
+  class << self
+    def [](*ary)
+      new(ary)
+    end
+  end
+
   def initialize(enum = nil)
     @hash = Hash.new(false)
 
