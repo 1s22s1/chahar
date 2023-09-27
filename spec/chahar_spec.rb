@@ -14,6 +14,7 @@ RSpec.describe Chahar do
     it { expect { described_class.new(nil) }.not_to raise_error }
     it { expect { described_class.new([1, 2]) }.not_to raise_error }
     it { expect { described_class.new(1..3) }.not_to raise_error }
+    it { expect { described_class.new([1, 2, 3]) { |x| x + 1 } }.not_to raise_error }
   end
 
   describe '#size' do
@@ -26,5 +27,6 @@ RSpec.describe Chahar do
     it { expect(described_class[1, 2, 3].size).to eq 3 }
     it { expect(described_class[[]].size).to eq 1 }
     it { expect(described_class[[nil]].size).to eq 1 }
+    it { expect(described_class.new([1, 2, 3]) { |x| x + 1 }.size).to eq 3 }
   end
 end
