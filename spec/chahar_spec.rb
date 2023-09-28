@@ -29,4 +29,11 @@ RSpec.describe Chahar do
     it { expect(described_class[[nil]].size).to eq 1 }
     it { expect(described_class.new([1, 2, 3]) { |x| x + 1 }.size).to eq 3 }
   end
+
+  describe '#==' do
+    it { expect(described_class[1, 2] == described_class[2, 1]).to eq true }
+    it { expect(described_class[1, 3, 5] == described_class[1, 5]).to eq false }
+    it { expect(described_class['a', 'b', 'c'] == described_class['a', 'c', 'b']).to eq true }
+    it { expect(described_class[1, 2] == [1, 2]).to eq false }
+  end
 end

@@ -24,4 +24,8 @@ class Chahar
   def size
     @hash.size
   end
+
+  def ==(other)
+    @hash == other.instance_variable_get(:@hash)
+  end
 end
