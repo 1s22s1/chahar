@@ -12,7 +12,7 @@ gem install chahar
 
 ```ruby
 require 'chahar'
-s1 = Chahar[1, 2] #=> #<Chahar:0x00007d86339e9508 @hash={1=>true, 2=>true}>
+s1 = Chahar[1, 2] #=> #<Chahar: {1, 2}>
 ```
 
 ## Contributing

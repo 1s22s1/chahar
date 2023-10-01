@@ -36,4 +36,10 @@ class Chahar
       self.class.new(@hash.keys & other)
     end
   end
+
+  def to_s
+    "#<#{self.class}: {#{@hash.keys.join(', ')}}>"
+  end
+
+  alias inspect to_s
 end
