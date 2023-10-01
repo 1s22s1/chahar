@@ -46,6 +46,12 @@ class Chahar
   def to_chahar
     self
   end
+
+  def add(o)
+    @hash[o] = true
+
+    self
+  end
 end
 
 module Enumerable

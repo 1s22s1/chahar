@@ -53,4 +53,10 @@ RSpec.describe Chahar do
     it { expect([1, 2].to_chahar).to eq described_class[1, 2] }
     it { expect(described_class[1, 2].to_chahar).to eq described_class[1, 2] }
   end
+
+  describe '#add' do
+    it { expect(described_class[1, 2].add(3)).to eq described_class[1, 2, 3] }
+    it { expect(described_class[1, 2].add([3, 4])).to eq described_class[1, 2, [3, 4]] }
+    it { expect(described_class[1, 2].add(2)).to eq described_class[1, 2] }
+  end
 end
