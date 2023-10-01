@@ -11,7 +11,8 @@ gem install chahar
 ## Usage
 
 ```ruby
-...
+require 'chahar'
+s1 = Chahar[1, 2] #=> #<Chahar:0x00007d86339e9508 @hash={1=>true, 2=>true}>
 ```
 
 ## Contributing
