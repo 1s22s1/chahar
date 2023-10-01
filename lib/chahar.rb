@@ -52,6 +52,12 @@ class Chahar
 
     self
   end
+
+  def merge(*enums)
+    enums.map { |enum| @hash[enum] = true }
+
+    self
+  end
 end
 
 module Enumerable

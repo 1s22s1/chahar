@@ -17,6 +17,7 @@ s1 = Chahar[1, 2] #=> #<Chahar: {1, 2}>
 s2 = [1, 2].to_chahar #=> #<Chahar: {1, 2}>
 s1 == s2 #=> true
 s1.add("foo") #=> #<Chahar: {1, 2, foo}>
+s1.merge([2, 6]) #=> #<Chahar: {1, 2, foo, 2, 6}>
 ```
 
 ## Contributing

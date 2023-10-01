@@ -59,4 +59,9 @@ RSpec.describe Chahar do
     it { expect(described_class[1, 2].add([3, 4])).to eq described_class[1, 2, [3, 4]] }
     it { expect(described_class[1, 2].add(2)).to eq described_class[1, 2] }
   end
+
+  describe '#merge' do
+    it { expect(described_class[1, 2, 3].merge(2, 4, 6)).to eq described_class[1, 2, 3, 4, 6] }
+    it { expect(described_class[1, 2, 3].merge).to eq described_class[1, 2, 3] }
+  end
 end
