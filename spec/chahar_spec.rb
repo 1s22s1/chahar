@@ -62,6 +62,12 @@ RSpec.describe Chahar do
 
   describe '#merge' do
     it { expect(described_class[1, 2, 3].merge(2, 4, 6)).to eq described_class[1, 2, 3, 4, 6] }
-    it { expect(described_class[1, 2, 3].merge).to eq described_class[1, 2, 3] }
+    it { expect(described_class[1, 2, 3].merge()).to eq described_class[1, 2, 3] }
+  end
+
+  describe "#subset?" do
+    it { expect(described_class[1, 2].subset?(Set[1, 2, 3])).to eq true }
+    it { expect(described_class[1, 2].subset?(Set[1, 4])).to eq false }
+    it { expect(described_class[1, 2].subset?(Set[1, 2])).to eq true }
   end
 end

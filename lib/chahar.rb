@@ -58,6 +58,13 @@ class Chahar
 
     self
   end
+
+  def subset?(other)
+    self_keys = @hash.keys
+    other_keys = other.instance_variable_get(:@hash).keys
+
+    (self_keys - other_keys).size.zero?
+  end
 end
 
 module Enumerable
