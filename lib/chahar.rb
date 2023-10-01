@@ -28,4 +28,12 @@ class Chahar
   def ==(other)
     @hash == other.instance_variable_get(:@hash)
   end
+
+  def &(other)
+    if other.is_a?(self.class)
+      self.class.new(@hash.keys & other.instance_variable_get(:@hash).keys)
+    else
+      self.class.new(@hash.keys & other)
+    end
+  end
 end

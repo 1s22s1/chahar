@@ -36,4 +36,11 @@ RSpec.describe Chahar do
     it { expect(described_class['a', 'b', 'c'] == described_class['a', 'c', 'b']).to eq true }
     it { expect(described_class[1, 2] == [1, 2]).to eq false }
   end
+
+  describe '&' do
+    it { expect(described_class[1, 3, 5] & described_class[3, 2, 1]).to eq described_class[3, 1] }
+    it { expect(described_class['a', 'b', 'z'] & %w[a b c]).to eq described_class['a', 'b'] }
+    it { expect(described_class[1, 2, 3, 4] & [2, 4, 6]).not_to eq described_class[1, 2, 3, 4] }
+    it { expect(described_class[1, 2, 3, 4] & [2, 4, 6]).to eq described_class[2, 4] }
+  end
 end
