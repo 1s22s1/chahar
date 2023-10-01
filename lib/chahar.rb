@@ -42,4 +42,14 @@ class Chahar
   end
 
   alias inspect to_s
+
+  def to_chahar
+    self
+  end
+end
+
+module Enumerable
+  def to_chahar
+    Chahar.new(self)
+  end
 end

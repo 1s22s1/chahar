@@ -48,4 +48,9 @@ RSpec.describe Chahar do
     it { expect(described_class[1, 2].to_s).to eq '#<Chahar: {1, 2}>' }
     it { expect(described_class[described_class[0], 1, 2].to_s).to eq '#<Chahar: {#<Chahar: {0}>, 1, 2}>' }
   end
+
+  describe '#to_chahar' do
+    it { expect([1, 2].to_chahar).to eq described_class[1, 2] }
+    it { expect(described_class[1, 2].to_chahar).to eq described_class[1, 2] }
+  end
 end
